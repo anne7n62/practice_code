@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse trail</title>
+    <link rel="stylesheet" href="">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ==" crossorigin="anonymous"></script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Monument Extended";
+        }
+
+        .mouse_move {
+            width: 100%;
+            height: 100vh;
+            background: #161616;
+            overflow: hidden;
+        }
+
+        .text {
+            position: absolute;
+            pointer-events: none;
+            font-size: 6em;
+            -webkit-text-stroke: 1.6px #fff;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #161616;
+        }
+
+        .text span {
+            color: #fff;
+        }
+
+        .second_section {
+            width: 100%;
+            height: 100vh;
+            background: #f43940;
+            overflow: hidden;
+        }
+
+        .second_section h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="mouse_move">
+        <div class="cursor">
+            <div class="text">wisdom</div>
+            <div class="text">wisdom</div>
+            <div class="text">wisdom</div>
+            <div class="text">wisdom</div>
+            <div class="text"><span>wisdom</span></div>
+        </div>
+    </div>
+
+    <div class="second_section">
+        <h1>we know very little</h1>
+    </div>
+
+
+
+
+    <script>
+        document.addEventListener("mousemove", e => {
+            gsap.to(".text", {
+                x: e.clientX,
+                y: e.clientY,
+                stagger: -0.02
+            });
+        });
+    </script>
+</body></html>
